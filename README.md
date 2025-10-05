@@ -1,14 +1,6 @@
 # Shark Tag Technical Documentation
 ![Main Board 3D Model](images/video_tag.gif)
-*3D model illustrating component*
 
-
-<img src="images/view2_3D.png" width="250" alt="Power Schematic">
-*3D model illustrating component*
-
-
-<img src="images/3d_power.jpeg" width="250" alt="Power Schematic">
-*3D model illustrating component*
 
 ## Table of Contents
 - [System Architecture](#system-architecture)
