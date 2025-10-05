@@ -1,4 +1,6 @@
 # Shark Tag Technical Documentation
+![Main Board 3D Model](images/video_tag.mp4)
+*3D model illustrating component*
 ![Main Board 3D Model](images/view2_3D.png)
 *3D model illustrating component*
 ![Main Board 3D Model](images/3d_power.jpeg)
