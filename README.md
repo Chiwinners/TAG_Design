@@ -4,7 +4,7 @@
 
 ## Table of Contents
 - [System Architecture](#system-architecture)
-- [Component Specifications](#component-specifications)
+- [Electronic Specifications](#electronic-specifications)
 - [Power Subsystem](#power-subsystem)
 - [Onboard Computer](#onboard-computer)
 - [Data & Communication](#data--communication)
@@ -57,7 +57,7 @@ graph TB
 - **Main PCB**: Sensor processing, behavioral algorithms, data storage, satellite communication
 - **Dedicated Power Rails**: 3.3V for digital, 3.7V for analog components
 
-## Component Specifications
+## Electronic Specifications
 
 ### Microcontroller & Processing
 
