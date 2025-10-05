@@ -6,6 +6,7 @@
 - [Power Subsystem](#power-subsystem)
 - [Onboard Computer](#onboard-computer)
 - [Data & Communication](#data--communication)
+- [PCB design & modelling](#pcb-design--modeling)
 
 ## System Architecture
 The device employs a modular dual-PCB architecture that physically separates power management from data processing functions, enabling optimized performance in challenging underwater environments. This separation allows for specialized design considerations: the power board focuses on robust energy harvesting and regulation, while the main processing board handles high-frequency sensor data acquisition and communication tasks.
@@ -312,31 +313,10 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 
 The electronic systems were implemented through comprehensive PCB design and 3D modeling, following the modular dual-PCB architecture described in the system specifications. Both boards were fully designed, routed, and validated virtually, with detailed 3D models created to verify mechanical integration and environmental compatibility.
 
-### Power Management PCB Design
-The power board layout implements the complete energy harvesting and regulation subsystem with optimized component placement for thermal management and power integrity.
-
-**Design Characteristics:**
-- **Component Arrangement**: Strategic placement of power components with adequate spacing for virtual thermal analysis
-- **Power Distribution**: Wide trace routing designed for high-current paths with proper current-carrying capacity
-- **Signal Isolation**: Careful separation between switching power components and sensitive control circuitry
-- **Connector Integration**: Optimized connector placement for inter-board power delivery in the virtual assembly
-
-*Design Visualizations:*
-- `images/power_schematic.png` - Complete schematic diagram showing turbine input, rectification, MPPT control, and dual-voltage regulation circuits
-- `images/power_pcb_layout.png` - PCB layout demonstrating component placement, power routing, and copper pour strategies
-- `images/power_3d_model.png` - 3D model visualization showing mechanical integration, component heights, and thermal simulation results
 
 ### Main Processing PCB Design
 The main board design integrates the complete sensor suite, processing core, and communication systems with emphasis on signal integrity and EMI mitigation in the virtual environment.
 
-**Design Characteristics:**
-- **Signal Integrity Optimization**: Controlled impedance routing for high-speed interfaces with virtual signal quality analysis
-- **Grounding Strategy**: Multi-layer stackup with dedicated ground planes for digital, analog, and RF sections
-- **Sensor Integration**: Optimized placement of sensors to minimize cross-talk and interference in the simulated environment
-- **RF Circuit Design**: Careful antenna placement and impedance matching networks for GPS and Iridium modules
-
-
-### Main Processing PCB
 
 #### Schematic Design
 ![Main Board Schematic](images/schematic_diagram.png)
@@ -349,7 +329,7 @@ The main board design integrates the complete sensor suite, processing core, and
 *3D model illustrating component clearance and mechanical mounting points*
 
 ### Power PCB
-
+The power board design integrates the complete energy harvesting system, MPPT and BMS.
 #### Schematic Design
 ![Main Board Schematic](images/schematic_power.jpeg)
 *Comprehensive schematic showingpower subsystem*
