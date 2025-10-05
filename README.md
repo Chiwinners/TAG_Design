@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [System Architecture](#system-architecture)
+- [Component Specifications](#component-specifications)
 - [Power Subsystem](#power-subsystem)
 - [Onboard Computer](#onboard-computer)
 - [Data & Communication](#data--communication)
@@ -83,7 +84,7 @@ graph TB
 | **GD25Q16ESIGR** | Data Storage | 16 Mbit (2MB) | SPI2 |
 | **Iridium SLM9670** | Satellite Comm | Global coverage | SPI2 + GPIO |
 
-## Design Criteria & Implementation
+### Design Criteria & Implementation
 
 
 ### Bus Architecture Rationale
@@ -102,7 +103,7 @@ graph TB
 - Simplifies debugging and fault isolation
 - Optimizes power consumption per peripheral
 
-## Key Design Innovations
+### Key Design Innovations
 
 ### 1. Intelligent Sensor Activation
 
@@ -126,7 +127,7 @@ graph TB
 - Multiple ground planes for RF performance
 - Pressure-compensated enclosure design
 
-## Pin Assignment & Connectivity
+### Pin Assignment & Connectivity
 
 ### Microcontroller Interface Mapping
 
@@ -140,7 +141,7 @@ graph TB
 | **MAX-M10S** | UART2 | PA2 (TX), PA3 (RX),<br>PC5 (EXTINT) | GPS + Wake-up |
 | **Iridium** | SPI2 + Control | Shared SPI2, PB0 (RESET) | Satellite Communication |
 
-## Performance Characteristics
+### Performance Characteristics
 
 ### Data Acquisition Capabilities
 
@@ -207,7 +208,11 @@ graph TB
 - **CJMCU-2557**: Integrated MPPT + battery management
 - **Dual Regulators**: 3.3V (digital) and 3.7V (analog) rails
 
-    ## Onboard Computer
+## Onboard Computer
+    The onboard computer implements an intelligent state management system that dynamically optimizes the balance between data collection and power conservation through four distinct operational states. In Hibernation mode, the system maintains minimal power consumption by activating only the IMU for basic motion monitoring while tracking battery levels and time. This state serves as the default operational mode, consuming less than 500μA while waiting for activation triggers. When battery levels drop below 3.3V, the system transitions to Battery Saving mode, performing a complete shutdown of all non-essential systems to conserve energy until sufficient power is recovered. Activation events—either time-based (1800-second intervals) or behavior-triggered (hunting pattern detection)—prompt transition to Sensing state, where all environmental, motion, and position sensors are activated for comprehensive data collection, processing, and local storage. Finally, when conditions permit (adequate battery, surface proximity, and satellite availability), the system enters Transmission state, activating the satellite communication module and implementing a robust three-attempt retry protocol to ensure successful data delivery before returning to hibernation. This state machine architecture enables extended autonomous operation by ensuring that power-intensive components are activated only when necessary and for minimal durations.
+
+
+
 
     ### State Management System
     The control system implements an intelligent state machine for optimal power and data management:
@@ -248,6 +253,7 @@ graph TB
     - **Transmission**: Satellite communication with retry logic
 
 ## Data & Communication
+The data and communication system integrates a comprehensive sensor suite—including pressure, temperature, motion, magnetic field, and GPS sensors—that captures both environmental conditions and behavioral metrics. Raw sensor data is processed into calculated parameters such as depth, speed, and hunting probability, then encoded into efficient 64-character plain text strings for transmission. The system employs adaptive transmission modes, scaling from full datasets during optimal conditions to essential-only data during power conservation. 
 
 ### Sensor Suite & Processing
 
@@ -267,6 +273,23 @@ graph TB
 - **Activity Index**: Acceleration magnitude and patterns
 
 ### Data Transmission Protocol
+The following pipeline is designed for DATA transmission.
+```mermaid
+flowchart TD
+    A[Raw Sensor Data] --> B[Parameter Calculation]
+    B --> C[Data Encoding]
+    C --> D[Checksum Generation]
+    D --> E{Transmission Mode}
+    
+    E -->|Normal Operation| F[64-char String<br/>Full dataset]
+    E -->|Low Power Mode| G[32-char String<br/>Essential data only]
+    E -->|Emergency Mode| H[16-char String<br/>Critical data only]
+    
+    F --> I[Transmit]
+    G --> I
+    H --> I
+```
+
 
 **Fixed-Width Encoding (64-character):**
 ```
