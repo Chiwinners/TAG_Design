@@ -279,7 +279,7 @@ flowchart TD
 TTTTSSSSPPPPBBBBGGGGLLLLAAAAIIIIMMMMDDDDHHHHXXXXYYYYZZZZRRRRCCCC
 ```
 
-**Field Structure:**
+**Data Structure:**
 - `TTTT`: Time (HHMM), `SSSS`: Seconds, `PPPP`: Pressure (mbar×10)
 - `BBBB`: Battery (mV), `GGGG/LLLL`: Latitude/Longitude (degrees×1000)
 - `AAAA`: Acceleration (g×1000), `CCCC`: Checksum
