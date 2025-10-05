@@ -1,10 +1,15 @@
 # Shark Tag Technical Documentation
-![Main Board 3D Model](images/video_tag.mp4)
+![Main Board 3D Model](images/video_tag.gif)
 *3D model illustrating component*
-![Main Board 3D Model](images/view2_3D.png)
+
+
+<img src="images/view2_3D.png" width="250" alt="Power Schematic">
 *3D model illustrating component*
-![Main Board 3D Model](images/3d_power.jpeg)
+
+
+<img src="images/3d_power.jpeg" width="250" alt="Power Schematic">
 *3D model illustrating component*
+
 ## Table of Contents
 - [System Architecture](#system-architecture)
 - [Component Specifications](#component-specifications)
@@ -336,13 +341,15 @@ The main board design integrates the complete sensor suite, processing core, and
 ### Power PCB
 The power board design integrates the complete energy harvesting system, MPPT and BMS.
 #### Schematic Design
-![Main Board Schematic](images/schematic_power.jpeg)
+<img src="images/schematic_power.jpeg" width="400" alt="Power Schematic">
+
 *Comprehensive schematic showingpower subsystem*
 
 
 
 #### 3D Model
-![Main Board 3D Model](images/3d_power.jpeg)
+<img src="images/3d_power.jpeg" width="400" alt="Power Schematic">
+
 *3D model illustrating component clearance and mechanical mounting points*
 
 
