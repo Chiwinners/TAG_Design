@@ -317,6 +317,7 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 ### Structural Components
 
 - **Hull**:  Base of the FDM-3D printed structural core. Manufactured in PLA with 100% infill for structural integrity and water-proofed with a coat of Vinyl Ester Resin. Holds the electrical components on the inside and the attatchment to the torsional spring on the outside.
+![Hull Component](images/Hull.png)
 - **Cover**: Cover of the FDM-3D printed structural core, complimentary to teh Hull with lip interlocking. Manufactured in PLA with 100% infill for structural integrity and water-proofed with a coat of Vinyl Ester Resin. Holds the snesors in contact to the outside and both the housing and rotational seal for the pelton turbine axle.
 - **Pad Holds**: FDM-3D printed supports for the grip pads that non-invasively attatch to the sharks dorsal fin. Manufactured in PLA with 100% infill and water-proofed with a coat of Vinyl Ester Resin, these recieve the torsional spring and attatch to the silicone pads through an cyanoacrylate adhesive.
 - **Pelton Turbine**: FDM-3D printed Pelton turbina compatible with dc motor axle. Manufactured in PLA with 100% infill and and water-proofed with a coat of Vinyl Ester Resin, this component transforms the water flow along the surface of the tag into energy for the tag through a DC motor and the power system.
