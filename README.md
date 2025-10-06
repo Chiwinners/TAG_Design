@@ -1,4 +1,4 @@
-# Shark Tag Technical Documentation
+# Mr Tagington Technical Documentation
 ![Main Board 3D Model](images/video_tag.gif)
 
 
@@ -8,11 +8,11 @@
 - [Power Subsystem](#power-subsystem)
 - [Onboard Computer](#onboard-computer)
 - [Data & Communication](#data--communication)
-- [Mechanical Structure](#mechanical-structure)
+- [Mechanical Structure](#mechanical-design)
 - [PCB design & modelling](#pcb-design--modeling)
 
 ## System Architecture
-The device employs a modular dual-PCB architecture that physically separates power management from data processing functions, enabling optimized performance in challenging underwater environments. This separation allows for specialized design considerations: the power board focuses on robust energy harvesting and regulation, while the main processing board handles high-frequency sensor data acquisition and communication tasks.
+The Mr Tagington device employs a modular dual-PCB architecture that physically separates power management from data processing functions, enabling optimized performance in challenging underwater environments. This separation allows for specialized design considerations: the power board focuses on robust energy harvesting and regulation, while the main processing board handles high-frequency sensor data acquisition and communication tasks.
 ![Main Board Layout](images/tag_diagram.jpeg)
 
 
@@ -312,8 +312,72 @@ TTTTSSSSPPPPBBBBGGGGLLLLAAAAIIIIMMMMDDDDHHHHXXXXYYYYZZZZRRRRCCCC
 This integrated system enables long-term autonomous monitoring of shark behavior through optimized power management, comprehensive sensing, and reliable satellite communication.
 
 
-
 ## Mechanical Design
+
+### Structural Components
+
+*[List of mechanical components and materials will be added once information is received from mechanical team]*
+
+### Design Criteria
+
+#### Marine Environment Considerations
+- **Corrosion Resistance**: Materials and coatings suitable for saltwater exposure
+- **Pressure Tolerance**: Structural integrity at operational depths
+- **Biofouling Mitigation**: Surface treatments to prevent marine growth
+- **UV Degradation**: Protection against sunlight exposure during surface intervals
+
+#### Operational Requirements
+- **Attachment Security**: Reliable mounting without animal harm
+- **Hydrodynamic Efficiency**: Minimal impact on shark swimming performance
+- **Durability**: Long-term deployment capability in harsh conditions
+- **Serviceability**: Reasonable maintenance and component access
+- **Manufacturing Scalability**: Easy to manufacture via 3D printing prototyping and scalable to mission requirements
+
+#### Design Constraints
+- **Size Limitations**: Maximum dimensions for target shark species
+- **Weight Budget**: Buoyancy and drag considerations
+- **Manufacturing Feasibility**: Practical production within available resources
+- **Regulatory Compliance**: Animal welfare and environmental regulations
+
+### Mechanical Design - Enclosure Structure
+
+#### Structural Approach with Reinforcement
+*[Details on enclosure design strategy, reinforcement methods, and load distribution will be documented here]*
+
+#### Aerodynamic Profile Design
+- **Streamlined Geometry**: Aerodynamic profile designed to minimize drag in the direction of movement
+- **Energy Generation Integration**: Profile allows for energy generation component to extend mission duration
+- **Flow Optimization**: Shape optimized for minimal hydrodynamic resistance during shark locomotion
+
+#### Pressure Design Calculations
+*[Engineering calculations for depth pressure resistance, safety factors, and structural analysis will be included]*
+
+#### 3D Printing Development
+*[Additive manufacturing considerations, material selection, print orientation, and post-processing requirements will be specified]*
+
+### Mechanical Design - Attachment System
+
+#### Non-Invasive Coupling Approach
+*[Clamp mechanism design philosophy, padding materials, and animal safety features will be described]*
+
+#### Torsional Spring Mechanism
+- **Non-Invasive Retention**: Torsional spring avoids resorting to invasive attachment methods
+- **Controlled Pressure**: Silicon grip pads ensure low crushing pressure prevents detachment by drag
+- **Animal Safety**: Designed to guarantee no unnecessary harm to sharks while maintaining secure attachment
+
+#### Spring Calculations and Grip Pad Sizing
+*[Mechanical spring design, force calculations, contact pressure distribution, and pad dimensioning will be detailed]*
+
+### Mechanical Design - Pelton Turbine
+
+#### Turbine Configuration
+*[Turbine blade design, flow optimization, and energy conversion efficiency analysis will be presented]*
+
+
+
+
+
+
 
 ### Structural Components
 
