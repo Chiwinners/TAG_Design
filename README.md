@@ -357,17 +357,17 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 ### Mechanical Design - Enclosure Structure
 
 #### Structural Approach with Reinforcement
-- **Structural Concept**: The enclosure is composed of an FDM 3D-printed **PLA nucleus** with a **3 mm wall thickness**, impregnated and sealed with a **vinyl ester resin** to eliminate inter-layer porosity and improve compressive strength.  
-- **Reinforcement Layer**: A **2 mm Glass Fiber Reinforced Polymer (GFRP)** skin is applied over the impregnated surface using vacuum-assisted layup. The composite layup follows a symmetric [±45/0/0/±45] stacking sequence of plain weave glass fiber, prioritizing circumferential stiffness for external pressure loads.  
+- **Structural Concept**: The enclosure is composed of an FDM 3D-printed **PLA nucleus** with a **3 mm wall thickness**, it is impregnated and sealed with a **vinyl ester resin** to eliminate smooth the surface and water-proof the structure.  
+- **Reinforcement Layer**: A **2 mm Glass Fiber Reinforced Polymer (GFRP)** skin is applied over the nucleus using a vacuum layup. The composite layup uses a symmetric [±45/0/0/±45] stacking sequence of plain weave glass fiber for circumferential stiffness against external pressure loads.  
 - **Material Rationale**: GFRP was selected instead of CFRP to ensure **magnetic transparency** for the onboard magnetometer and to prevent conductive interference.  
-- **Interfacial Bonding**: The PLA–GFRP interface is bonded using the same vinyl ester resin matrix, providing continuous shear load transfer and improved delamination resistance.  
-- **Sealing Method**: All joints use static O-ring seals—two circular (18 mm diameter) and one square (3.9 × 4.9 mm), these are made from **EPDM/Viton (75–90A)** for marine-grade sealing.  
-- **Surface Treatment**: A smooth resin finish mitigates marine biofouling and facilitates laminar boundary flow across the hull surface.
+- **Interfacial Bonding**: The PLA–GFRP interface is bonded using the same vinyl ester resin matrix, this provides a continuous shear load transfer and reduces the risk of delamination.  
+- **Sealing Method**: All three joints use static O-ring seals, two circular (18 mm diameter) and one square (3.9 × 4.9 mm), these are made from **EPDM/Viton (75–90A)** which allows for marine-grade sealing.  
+- **Surface Treatment**: A smooth resin finish mitigates marine biofouling and improves laminar boundary flow across the hull surface.
 
 #### Aerodynamic (Hydrodynamic) Profile Design
 - **Streamlined Geometry**: The tag’s cross-section combines a **semicircular leading edge** external to de clamp on the animal's dorsal fin and a **rectangular base section**, yielding an approximate frontal area of **0.00256 m² (25.6 cm²)**. The external GFRP coating and rounded transitions reduce local flow separation.
   ![Front](images/Front_Profile-2.png)
-- **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening is filleted and flow-aligned to minimize disturbance and separation bubbles, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
+- **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening's borders are filleted and aligned to minimize disturbance and separation bubbles in the flow of water through the turbine, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
 - **Flow Optimization**: The combined hull and cover form a smooth, continuous hydrodynamic contour which fades of to an end tail. The addition of the turbine increases the total drag coefficient to an estimated **Cd ≈ 0.6**, accounting for flow interference, while maintaining overall directional stability.
   ![Front](images/Side_Profile.png)
 
@@ -400,37 +400,104 @@ p_\text{design} = FS \cdot p_\text{gauge} = 1.25 \times 3.02\ \mathrm{MPa}
 $$
 
 Thus, the enclosure must resist a **design pressure of 3.77 MPa (≈37.7 bar)** without yielding or delamination.  
-The GFRP skin handles the primary compressive load, while the PLA core prevents buckling through internal support.  
-The resulting 5 mm composite wall (3 mm core + 2 mm GFRP) provides an ample margin against both collapse and wrinkling failure.
+The GFRP skin handles the bulk of the pressure load, while the PLA core prevents buckling in the composite skin through internal support.  
+The resulting 5 mm composite wall (3 mm core + 2 mm GFRP) provides an good margin against both collapse and wrinkling failure.
 
 
-#### 3D Printing Development
-- **Process Parameters**: Printed using **0.2 mm nozzle**, **0.12–0.16 mm layer height**, and **100% infill** for maximum density.  
-- **Tolerances**: Nominal ±0.2 mm, with post-processing (fine sanding and resin impregnation) to achieve sealing-grade surfaces for O-rings.  
-- **Impregnation Phase**: The printed hull is first coated in **low-viscosity vinyl ester resin** under vacuum to seal print lines before GFRP layup.  
-- **Layup Phase**: The 2 mm GFRP skin is applied using vacuum bagging, ensuring <2% void content and high fiber–resin adhesion.  
-- **Final Assembly**: Mating surfaces (hull–cover interface and sensor port) are machined or sanded to fit standard marine seal grooves per Parker specifications.
-
----
+#### 3D Printing Development and Manufacturing
+- **Process Parameters**: The pieces are setup to be printed using **0.2 mm nozzle** for better printing resolution, **0.12–0.16 mm layer height** in order to minimize inter-layer crevices, and **100% infill** to maximize structural integrity.  
+- **Tolerances**: ±0.2 mm from initial printing setup, with post-processing (fine sanding and resin impregnation) a finer margin can be achieved to prepare sealing-grade surfaces for O-rings.  
+- **Impregnation Phase**: The printed hull is first coated in **vinyl ester resin** under vacuum seal to seal print lines before GFRP layup.  
+- **Layup Phase**: The 2 mm GFRP skin is applied using vacuum assisted layup methods, ensuring high fiber–resin adhesion and minimizing porosity in the matrix.  
+- **Final Assembly**: Mating surfaces (hull–cover joint and sensor port) are sanded to tight fit but sealed with resin nonetheless.
 
 
 ### Mechanical Design - Attachment System
 
 #### Non-Invasive Coupling Approach
-*[Clamp mechanism design philosophy, padding materials, and animal safety features will be described]*
+The tag attaches to the shark’s dorsal fin using a **non-invasive clamp**.  
+This was a pretty strict requirement from the start — no penetration, no sutures, nothing that would hurt or stress the animal. So, the design uses **two curved pads** that gently press on both sides of the fin, each one lined with a **silicone layer** to distribute pressure evenly and prevent slipping.  
+
+The clamp closes through a **torsional spring** mounted on a pivot axis, which allows it to apply a consistent force while still being flexible enough to adjust to the fin’s shape. The pads have a **textured surface**, not for grip per se, but to avoid suction spots and allow a thin film of water to remain between the surfaces, reducing friction peaks.
+
+---
 
 #### Torsional Spring Mechanism
-- **Non-Invasive Retention**: Torsional spring avoids resorting to invasive attachment methods
-- **Controlled Pressure**: Silicon grip pads ensure low crushing pressure prevents detachment by drag
-- **Animal Safety**: Designed to guarantee no unnecessary harm to sharks while maintaining secure attachment
+The torsional spring handles the job of keeping the clamp closed without any active locking.  
+It’s simple, really — two arms connected at the hinge with a coiled spring that resists opening. When the tag is attached, the spring stays in a “neutral” or stable state, so it’s not constantly over-stressed.
+
+From tests and calculations, the clamp needs to withstand the drag forces acting on the tag at high swimming speeds. At around **10 m/s**, the tag can generate roughly **67 N of drag**, based on the drag coefficient and frontal area.
+
+$$
+F_D = \tfrac{1}{2} \rho C_d A v^2
+$$
+
+where  
+$\rho = 1025\ \mathrm{kg/m^3}$ (seawater density),  
+$C_d = 0.6$,  
+$A = 0.00219\ \mathrm{m^2}$,  
+$v = 10\ \mathrm{m/s}$  
+
+so
+
+$$
+F_D = 0.5 \times 1025 \times 0.6 \times 0.00219 \times 10^2 \approx 67\ \mathrm{N}
+$$
+
+To keep the tag in place, the friction between the pads and the fin must at least balance that drag.  
+With a friction coefficient $\mu = 0.5$ and **two clamp pads** sharing the load, the normal force per pad should be:
+
+$$
+N = \frac{F_D \times FS}{2 \mu}
+$$
+
+Using a safety factor $FS = 1.25$:
+
+$$
+N = \frac{67 \times 1.25}{2 \times 0.5} = 83.75\ \mathrm{N}
+$$
+
+So each pad needs roughly **84 N** of normal force.  
+That’s not huge, but it’s enough to hold firmly without crushing tissue — the silicone helps spread it over about **60 cm²**, which keeps the contact pressure below **15 kPa**, well within safe limits for soft biological surfaces.
+
+---
 
 #### Spring Calculations and Grip Pad Sizing
-*[Mechanical spring design, force calculations, contact pressure distribution, and pad dimensioning will be detailed]*
+From those numbers, the torsional spring was chosen to deliver about **120 N·mm per degree** at its working angle, with preload adjusted so it hits that 84 N per side when the clamp is closed.  
+Each pad measures **10 cm × 6 cm**, with a slight curvature radius of about **40–45 mm**, which fits most medium-sized dorsal fins (typical thickness 15–35 mm).  
+
+The spring itself is stainless steel — nothing fancy, just reliable, marine-grade, and easy to replace if fatigue ever shows up. The housing isolates it from direct seawater contact through a thin resin coating to avoid corrosion over long deployments.
+
+---
 
 ### Mechanical Design - Pelton Turbine
 
 #### Turbine Configuration
-*[Turbine blade design, flow optimization, and energy conversion efficiency analysis will be presented]*
+On the turbine side, things get a bit more experimental. The tag carries a **small Pelton wheel** on the lateral section, placed so that the flow moving past the tag hits the buckets almost tangentially. That was done on purpose — to get a decent spin rate without too much added drag.
+
+The turbine connects to a **9 V DC motor**, which doubles as a generator. It’s not directly coupled by a shaft (that’d leak under pressure), but instead through a **magnetic coupling system** that transfers torque across the sealed wall. The outside rotor spins in water; the inner magnets follow on the dry side, turning the motor.
+
+The hole that houses the turbine is shaped carefully — all edges are filleted, and the inner pocket blends smoothly into the main surface to reduce local turbulence. Still, adding the turbine naturally bumps the drag a bit. Based on the projected area of the runner (about 25 mm diameter), the extra drag can be approximated by:
+
+$$
+\Delta F = \tfrac{1}{2} \rho C_{d,p} A_p v^2
+$$
+
+with $C_{d,p} \approx 1.1$, $A_p = \pi (0.0125)^2 = 4.9 \times 10^{-4}\ \mathrm{m^2}$, and $v = 10\ \mathrm{m/s}$:
+
+$$
+\Delta F \approx 0.5 \times 1025 \times 1.1 \times 4.9\times10^{-4} \times 10^2 \approx 27.7\ \mathrm{N}
+$$
+
+So roughly **28 N of additional drag** from the turbine at top speed — acceptable, considering it’s generating usable power at that point. The geometry keeps the flow attached and avoids cavitation, which could otherwise tear up the small buckets.
+
+---
+
+#### Flow and Structural Notes
+The turbine cavity reinforces internally through the GFRP shell; no direct shaft penetrations are made. Heat from the motor dissipates through the composite wall into the surrounding seawater. The result is a compact, self-contained generator that stays sealed up to **300 m depth**, without risking leaks from rotating seals.
+
+---
+
 
 
 
