@@ -360,7 +360,7 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 
 #### Aerodynamic (Hydrodynamic) Profile Design
 - **Streamlined Geometry**: The tag’s cross-section combines a **semicircular leading edge** external to de clamp on the animal's dorsal fin and a **rectangular base section**, yielding an approximate frontal area of **0.00256 m² (25.6 cm²)**. The external GFRP coating and rounded transitions reduce local flow separation.
-  ![Hull Component](images/Hull.png)
+  ![Front](images/Front Profile-2.png)
 - **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening is filleted and flow-aligned to minimize disturbance and separation bubbles, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
 - **Flow Optimization**: The combined hull and cover form a smooth, continuous hydrodynamic contour which fades of to an end tail. The addition of the turbine increases the total drag coefficient to an estimated **Cd ≈ 0.6**, accounting for flow interference, while maintaining overall directional stability.
 
