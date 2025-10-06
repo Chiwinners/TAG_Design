@@ -317,13 +317,21 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 ### Structural Components
 
 - **Hull**:  Base of the FDM-3D printed structural core. Manufactured in PLA with 100% infill for structural integrity and water-proofed with a coat of Vinyl Ester Resin. Holds the electrical components on the inside and the attatchment to the torsional spring on the outside.
+
 ![Hull Component](images/Hull.png)
+
 - **Cover**: Cover of the FDM-3D printed structural core, complimentary to teh Hull with lip interlocking. Manufactured in PLA with 100% infill for structural integrity and water-proofed with a coat of Vinyl Ester Resin. Holds the snesors in contact to the outside and both the housing and rotational seal for the pelton turbine axle.
+
 ![Cover Component](images/Cover.png)
+
 - **Pad Holds**: FDM-3D printed supports for the grip pads that non-invasively attatch to the sharks dorsal fin. Manufactured in PLA with 100% infill and water-proofed with a coat of Vinyl Ester Resin, these recieve the torsional spring and attatch to the silicone pads through an cyanoacrylate adhesive.
+
 ![Pad Holds Component](images/Pads.png)
+
 - **Pelton Turbine**: FDM-3D printed Pelton turbina compatible with dc motor axle. Manufactured in PLA with 100% infill and and water-proofed with a coat of Vinyl Ester Resin, this component transforms the water flow along the surface of the tag into energy for the tag through a DC motor and the power system.
+
 ![Pelton Turbine](images/Pelton.png)
+
 - **GFRP Skin**: 2mm thick skin of Glass Fiber Reinforced Polymer applied over the hole structured and binded to the nucleus through Vinyl Ester Resin. Manufactured from glass fiber symmetric plain weave and a Vinyl Ester Resin matrix, it handles the direct structural load due to external pressure and is supported angainst bukling by the PLA 3D printed nucleus.
 
 ### Design Criteria
@@ -356,16 +364,12 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 - **Sealing Method**: All joints use static O-ring seals—two circular (18 mm diameter) and one square (3.9 × 4.9 mm), these are made from **EPDM/Viton (75–90A)** for marine-grade sealing.  
 - **Surface Treatment**: A smooth resin finish mitigates marine biofouling and facilitates laminar boundary flow across the hull surface.
 
----
-
 #### Aerodynamic (Hydrodynamic) Profile Design
 - **Streamlined Geometry**: The tag’s cross-section combines a **semicircular leading edge** external to de clamp on the animal's dorsal fin and a **rectangular base section**, yielding an approximate frontal area of **0.00256 m² (25.6 cm²)**. The external GFRP coating and rounded transitions reduce local flow separation.
   ![Front](images/Front_Profile-2.png)
 - **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening is filleted and flow-aligned to minimize disturbance and separation bubbles, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
 - **Flow Optimization**: The combined hull and cover form a smooth, continuous hydrodynamic contour which fades of to an end tail. The addition of the turbine increases the total drag coefficient to an estimated **Cd ≈ 0.6**, accounting for flow interference, while maintaining overall directional stability.
   ![Front](images/Side_Profile.png)
-
----
 
 ### Pressure Design Calculations
 
@@ -395,12 +399,10 @@ p_\text{design} = FS \cdot p_\text{gauge} = 1.25 \times 3.02\ \mathrm{MPa}
 = 3.77\ \mathrm{MPa}\ (37.7\ \mathrm{bar})
 $$
 
-
 Thus, the enclosure must resist a **design pressure of 3.77 MPa (≈37.7 bar)** without yielding or delamination.  
 The GFRP skin handles the primary compressive load, while the PLA core prevents buckling through internal support.  
 The resulting 5 mm composite wall (3 mm core + 2 mm GFRP) provides an ample margin against both collapse and wrinkling failure.
 
----
 
 #### 3D Printing Development
 - **Process Parameters**: Printed using **0.2 mm nozzle**, **0.12–0.16 mm layer height**, and **100% infill** for maximum density.  
