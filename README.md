@@ -341,10 +341,10 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 - **Structual Stability**: The tag must be able to withstand structurally the calculated pressure of 3 MPa with a safety factor of 1.25, resulting in a design pressure of 3.77 MPa. 
 
 #### Design Constraints
-- **Size Limitations**: Maximum dimensions for target shark species
-- **Weight Budget**: Buoyancy and drag considerations
-- **Manufacturing Feasibility**: Practical production within available resources
-- **Regulatory Compliance**: Animal welfare and environmental regulations
+- **Size Limitations**: The tag must have space for all the electronic components while maintaining the smalles dimensions possible in order to lessen the impact on the animal's mobility. 
+- **Hydrodynamic Interaction**: The hydrodynamic profile of the tag must minimize drag while allowing for power generation through a pelton turbine. 
+- **Manufacturing Feasibility**: The use of 3D printing in the tag's manufacturing must allow foir rapid prototyping and adaptability to changing requirements.
+- **Regulatory Compliance**: The tag must minimize of outright end any potential negative impact on animal welfare and enviromental safety, this can be done through non-invasive approaches to tag attatchment and the use of non polutting materials.
 
 ### Mechanical Design - Enclosure Structure
 
