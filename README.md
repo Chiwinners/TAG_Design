@@ -360,33 +360,41 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 
 #### Aerodynamic (Hydrodynamic) Profile Design
 - **Streamlined Geometry**: The tag’s cross-section combines a **semicircular leading edge** external to de clamp on the animal's dorsal fin and a **rectangular base section**, yielding an approximate frontal area of **0.00256 m² (25.6 cm²)**. The external GFRP coating and rounded transitions reduce local flow separation.
-  ![Front](images/Front Profile-2.png)
+  ![Front](images/Front_Profile-2.png)
 - **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening is filleted and flow-aligned to minimize disturbance and separation bubbles, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
 - **Flow Optimization**: The combined hull and cover form a smooth, continuous hydrodynamic contour which fades of to an end tail. The addition of the turbine increases the total drag coefficient to an estimated **Cd ≈ 0.6**, accounting for flow interference, while maintaining overall directional stability.
+  ![Front](images/Side_Profile.png)
 
 ---
 
-#### Pressure Design Calculations
-Hydrostatic external pressure at 300 m depth is estimated using the standard seawater relation:
+### Pressure Design Calculations
 
-\[
-p = \rho g h
-\]
+**Hydrostatic external pressure**
 
-where:
-- \(\rho = 1025\ \mathrm{kg/m^3}\) (seawater density)  
-- \(g = 9.81\ \mathrm{m/s^2}\) (gravitational acceleration)  
-- \(h = 300\ \mathrm{m}\) (depth)
+$$
+p = \rho\, g\, h
+$$
 
-\[
-p = 1025 \times 9.81 \times 300 = 3{,}016{,}575\ \mathrm{Pa} \approx 3.02\ \mathrm{MPa}
-\]
+Where: $\rho = 1025\ \mathrm{kg\,m^{-3}}$, $g = 9.81\ \mathrm{m\,s^{-2}}$, $h = 300\ \mathrm{m}$.
 
-Applying a **safety factor of 1.25**:
+**At 300 m (gauge pressure):**
 
-\[
-p_\text{design} = 1.25 \times 3.02\ \mathrm{MPa} = 3.77\ \mathrm{MPa}
-\]
+$$
+\begin{aligned}
+p_\text{gauge}
+  &= 1025 \times 9.81 \times 300 \\
+  &= 3{,}016{,}575\ \mathrm{Pa} \\
+  &= 3.02\ \mathrm{MPa}\ (30.17\ \mathrm{bar})
+\end{aligned}
+$$
+
+**Design pressure with safety factor $FS=1.25$:**
+
+$$
+p_\text{design} = FS \cdot p_\text{gauge} = 1.25 \times 3.02\ \mathrm{MPa}
+= 3.77\ \mathrm{MPa}\ (37.7\ \mathrm{bar})
+$$
+
 
 Thus, the enclosure must resist a **design pressure of 3.77 MPa (≈37.7 bar)** without yielding or delamination.  
 The GFRP skin handles the primary compressive load, while the PLA core prevents buckling through internal support.  
