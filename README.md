@@ -8,6 +8,7 @@
 - [Power Subsystem](#power-subsystem)
 - [Onboard Computer](#onboard-computer)
 - [Data & Communication](#data--communication)
+- [Mechanical Structure](#mechanical-structure)
 - [PCB design & modelling](#pcb-design--modeling)
 
 ## System Architecture
@@ -309,6 +310,68 @@ TTTTSSSSPPPPBBBBGGGGLLLLAAAAIIIIMMMMDDDDHHHHXXXXYYYYZZZZRRRRCCCC
 - Corrosion-resistant materials for marine deployment
 
 This integrated system enables long-term autonomous monitoring of shark behavior through optimized power management, comprehensive sensing, and reliable satellite communication.
+
+
+
+## Mechanical Design
+
+### Structural Components
+
+*[List of mechanical components and materials will be added once information is received from mechanical team]*
+
+### Design Criteria
+
+#### Marine Environment Considerations
+- **Corrosion Resistance**: Materials and coatings suitable for saltwater exposure
+- **Pressure Tolerance**: Structural integrity at operational depths
+- **Biofouling Mitigation**: Surface treatments to prevent marine growth
+- **UV Degradation**: Protection against sunlight exposure during surface intervals
+
+#### Operational Requirements
+- **Attachment Security**: Reliable mounting without animal harm
+- **Hydrodynamic Efficiency**: Minimal impact on shark swimming performance
+- **Durability**: Long-term deployment capability in harsh conditions
+- **Serviceability**: Reasonable maintenance and component access
+
+#### Design Constraints
+- **Size Limitations**: Maximum dimensions for target shark species
+- **Weight Budget**: Buoyancy and drag considerations
+- **Manufacturing Feasibility**: Practical production within available resources
+- **Regulatory Compliance**: Animal welfare and environmental regulations
+
+### Mechanical Design - Enclosure Structure
+
+#### Structural Approach with Reinforcement
+*[Details on enclosure design strategy, reinforcement methods, and load distribution will be documented here]*
+
+#### Pressure Design Calculations
+*[Engineering calculations for depth pressure resistance, safety factors, and structural analysis will be included]*
+
+#### 3D Printing Development
+*[Additive manufacturing considerations, material selection, print orientation, and post-processing requirements will be specified]*
+
+### Mechanical Design - Attachment System
+
+#### Non-Invasive Coupling Approach
+*[Clamp mechanism design philosophy, padding materials, and animal safety features will be described]*
+
+#### Spring Calculations and Grip Pad Sizing
+*[Mechanical spring design, force calculations, contact pressure distribution, and pad dimensioning will be detailed]*
+
+### Mechanical Design - Pelton Turbine
+
+#### Turbine Configuration
+*[Turbine blade design, flow optimization, and energy conversion efficiency analysis will be presented]*
+
+
+
+
+
+
+
+
+
+
 
 
 ## PCB Design & Modeling
