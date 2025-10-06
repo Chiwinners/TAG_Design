@@ -416,15 +416,14 @@ The resulting 5 mm composite wall (3 mm core + 2 mm GFRP) provides an good margi
 
 #### Non-Invasive Coupling Approach
 The tag attaches to the shark’s dorsal fin using a **non-invasive clamp**.  
-This was a pretty strict requirement from the start — no penetration, no sutures, nothing that would hurt or stress the animal. So, the design uses **two curved pads** that gently press on both sides of the fin, each one lined with a **silicone layer** to distribute pressure evenly and prevent slipping.  
+This was a pretty strict requirement from the start — no penetration, no sutures, nothing that would hurt or stress the animal. The design uses **two pads** that gently press on both sides of the fin, each one lined with a **silicone layer** to distribute pressure evenly and prevent slipping.  
 
-The clamp closes through a **torsional spring** mounted on a pivot axis, which allows it to apply a consistent force while still being flexible enough to adjust to the fin’s shape. The pads have a **textured surface**, not for grip per se, but to avoid suction spots and allow a thin film of water to remain between the surfaces, reducing friction peaks.
+The clamp closes through a **torsional spring** mounted on a pivot axis, which allows it to apply a consistent force while still being flexible enough to adjust to the fin’s shape. The pads have a **textured surface**, to maximize grip
 
----
 
 #### Torsional Spring Mechanism
 The torsional spring handles the job of keeping the clamp closed without any active locking.  
-It’s simple, really — two arms connected at the hinge with a coiled spring that resists opening. When the tag is attached, the spring stays in a “neutral” or stable state, so it’s not constantly over-stressed.
+Two arms connected at the hinge with a coiled spring that resists opening. When the tag is attached, the spring exerts its regular clamp force without being over stressed.
 
 From tests and calculations, the clamp needs to withstand the drag forces acting on the tag at high swimming speeds. At around **10 m/s**, the tag can generate roughly **67 N of drag**, based on the drag coefficient and frontal area.
 
@@ -457,27 +456,25 @@ $$
 N = \frac{67 \times 1.25}{2 \times 0.5} = 83.75\ \mathrm{N}
 $$
 
-So each pad needs roughly **84 N** of normal force.  
-That’s not huge, but it’s enough to hold firmly without crushing tissue — the silicone helps spread it over about **60 cm²**, which keeps the contact pressure below **15 kPa**, well within safe limits for soft biological surfaces.
+Each pad needs roughly **84 N** of normal force.  
+Enough to hold firmly without crushing tissue — the silicone helps spread it over about **60 cm²**, which keeps the contact pressure below **15 kPa**, well within safe limits for soft biological surfaces.
 
----
 
 #### Spring Calculations and Grip Pad Sizing
 From those numbers, the torsional spring was chosen to deliver about **120 N·mm per degree** at its working angle, with preload adjusted so it hits that 84 N per side when the clamp is closed.  
-Each pad measures **10 cm × 6 cm**, with a slight curvature radius of about **40–45 mm**, which fits most medium-sized dorsal fins (typical thickness 15–35 mm).  
+Each pad measures **10 cm × 6 cm**. This design can be scaled down for shorter fin cords while maintaining less than the critical **100 kPa** researched.  
 
-The spring itself is stainless steel — nothing fancy, just reliable, marine-grade, and easy to replace if fatigue ever shows up. The housing isolates it from direct seawater contact through a thin resin coating to avoid corrosion over long deployments.
+The spring itself is stainless steel, marine-grade and easy to replace if fatigue ever shows up. The housing isolates it from direct seawater contact through a thin resin coating to avoid corrosion over long deployments.
 
----
 
 ### Mechanical Design - Pelton Turbine
 
 #### Turbine Configuration
-On the turbine side, things get a bit more experimental. The tag carries a **small Pelton wheel** on the lateral section, placed so that the flow moving past the tag hits the buckets almost tangentially. That was done on purpose — to get a decent spin rate without too much added drag.
+The tag carries a **small Pelton wheel** on the lateral section, placed so that the flow moving past the tag hits the buckets almost tangentially.
 
-The turbine connects to a **9 V DC motor**, which doubles as a generator. It’s not directly coupled by a shaft (that’d leak under pressure), but instead through a **magnetic coupling system** that transfers torque across the sealed wall. The outside rotor spins in water; the inner magnets follow on the dry side, turning the motor.
+The turbine connects to a **9 V DC motor**, which doubles as a generator. It’s shaft sealed using a lip seal to prevent water leaking into the inside of the tag structure.
 
-The hole that houses the turbine is shaped carefully — all edges are filleted, and the inner pocket blends smoothly into the main surface to reduce local turbulence. Still, adding the turbine naturally bumps the drag a bit. Based on the projected area of the runner (about 25 mm diameter), the extra drag can be approximated by:
+The hole that houses the turbine is shaped carefully — all edges are filleted, and the inner pocket blends smoothly into the main surface to reduce local turbulence. Still, adding the turbine naturallyincreases drag. Based on the projected area of the runner (about 25 mm diameter), the extra drag can be approximated by:
 
 $$
 \Delta F = \tfrac{1}{2} \rho C_{d,p} A_p v^2
@@ -491,17 +488,9 @@ $$
 
 So roughly **28 N of additional drag** from the turbine at top speed — acceptable, considering it’s generating usable power at that point. The geometry keeps the flow attached and avoids cavitation, which could otherwise tear up the small buckets.
 
----
 
 #### Flow and Structural Notes
 The turbine cavity reinforces internally through the GFRP shell; no direct shaft penetrations are made. Heat from the motor dissipates through the composite wall into the surrounding seawater. The result is a compact, self-contained generator that stays sealed up to **300 m depth**, without risking leaks from rotating seals.
-
----
-
-
-
-
-
 
 
 
