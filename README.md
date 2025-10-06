@@ -329,17 +329,16 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 ### Design Criteria
 
 #### Marine Environment Considerations
-- **Corrosion Resistance**: Materials and coatings suitable for saltwater exposure
-- **Pressure Tolerance**: Structural integrity at operational depths
-- **Biofouling Mitigation**: Surface treatments to prevent marine growth
-- **UV Degradation**: Protection against sunlight exposure during surface intervals
+- **Corrosion Resistance**: Saltwater surface flow exposure is prone to corrosively degrade materials, this reduces ultimate product life and could cause loss of the electrical components due to structural failure as a result of the corrosion of the structure
+- **Pressure Tolerance**: Water depth requires the exposure to equivalent external pressures for sealed bodies (such as our tag), approximations dictate 1 bar of pressure pero 10 meters of depth, however for depths of around 300 meters (current working limits of this prototype) the tag must be able to withstand approximately 30 bar or 3 MPa. Applying a safety factor of 1.25.
+- **Biofouling Mitigation**: Crevice presence in bodies exposed to seawater often experience marine growth, smooth surfaces mitigates this.
 
 #### Operational Requirements
-- **Attachment Security**: Reliable mounting without animal harm
-- **Hydrodynamic Efficiency**: Minimal impact on shark swimming performance
-- **Durability**: Long-term deployment capability in harsh conditions
-- **Serviceability**: Reasonable maintenance and component access
-- **Manufacturing Scalability**: Easy to manufacture via 3D printing prototyping and scalable to mission requirements
+- **Attachment Security**: Tag attatchment must adhere to non-invasive methods and avoid both securing through penetration (fin or skin) and excessive pressure on the animal's limbs.
+- **Hydrodynamic Efficiency**: The tag must maintain a minimal drag coefficient and avoid impeding the animal's movement as much as possible.
+- **Durability**: The tag must be able to withstand deployment and functionality for extended periods of time, managing dtructural durability and energy generation.
+- **Manufacturing Scalability**: The tag must be easy to manufacture via 3D printing prototyping and scalable to mission requirements.
+- **Structual Stability**: The tag must be able to withstand structurally the calculated pressure of 3 MPa with a safety factor of 1.25, resulting in a design pressure of 3.77 MPa. 
 
 #### Design Constraints
 - **Size Limitations**: Maximum dimensions for target shark species
