@@ -341,7 +341,7 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 - **Structual Stability**: The tag must be able to withstand structurally the calculated pressure of 3 MPa with a safety factor of 1.25, resulting in a design pressure of 3.77 MPa. 
 
 #### Design Constraints
-- **Size Limitations**: The tag must have space for all the electronic components while maintaining the smalles dimensions possible in order to lessen the impact on the animal's mobility. 
+- **Size Limitations**: The tag must allow space for all the electronic components while maintaining the smalles dimensions possible in order to lessen the impact on the animal's mobility. 
 - **Hydrodynamic Interaction**: The hydrodynamic profile of the tag must minimize drag while allowing for power generation through a pelton turbine. 
 - **Manufacturing Feasibility**: The use of 3D printing in the tag's manufacturing must allow foir rapid prototyping and adaptability to changing requirements.
 - **Regulatory Compliance**: The tag must minimize of outright end any potential negative impact on animal welfare and enviromental safety, this can be done through non-invasive approaches to tag attatchment and the use of non polutting materials.
@@ -349,18 +349,60 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 ### Mechanical Design - Enclosure Structure
 
 #### Structural Approach with Reinforcement
-*[Details on enclosure design strategy, reinforcement methods, and load distribution will be documented here]*
+- **Structural Concept**: The enclosure is composed of an FDM 3D-printed **PLA nucleus** with a **3 mm wall thickness**, impregnated and sealed with a **vinyl ester resin** to eliminate inter-layer porosity and improve compressive strength.  
+- **Reinforcement Layer**: A **2 mm Glass Fiber Reinforced Polymer (GFRP)** skin is applied over the impregnated surface using vacuum-assisted layup. The composite layup follows a symmetric [±45/0/0/±45] stacking sequence of plain weave glass fiber, prioritizing circumferential stiffness for external pressure loads.  
+- **Material Rationale**: GFRP was selected instead of CFRP to ensure **magnetic transparency** for the onboard magnetometer and to prevent conductive interference.  
+- **Interfacial Bonding**: The PLA–GFRP interface is bonded using the same vinyl ester resin matrix, providing continuous shear load transfer and improved delamination resistance.  
+- **Sealing Method**: All joints use static O-ring seals—two circular (18 mm diameter) and one square (3.9 × 4.9 mm), these are made from **EPDM/Viton (75–90A)** for marine-grade sealing.  
+- **Surface Treatment**: A smooth resin finish mitigates marine biofouling and facilitates laminar boundary flow across the hull surface.
 
-#### Aerodynamic Profile Design
-- **Streamlined Geometry**: Aerodynamic profile designed to minimize drag in the direction of movement
-- **Energy Generation Integration**: Profile allows for energy generation component to extend mission duration
-- **Flow Optimization**: Shape optimized for minimal hydrodynamic resistance during shark locomotion
+---
+
+#### Aerodynamic (Hydrodynamic) Profile Design
+- **Streamlined Geometry**: The tag’s cross-section combines a **semicircular leading edge** external to de clamp on the animal's dorsal fin and a **rectangular base section**, yielding an approximate frontal area of **0.00256 m² (25.6 cm²)**. The external GFRP coating and rounded transitions reduce local flow separation.
+  ![Hull Component](images/Hull.png)
+- **Energy Generation Integration**: The body includes an **aperture for a Pelton turbine** on the lateral section. The opening is filleted and flow-aligned to minimize disturbance and separation bubbles, allowing the turbine to harness part of the passing flow for onboard energy generation through a 9V DC motor.  
+- **Flow Optimization**: The combined hull and cover form a smooth, continuous hydrodynamic contour which fades of to an end tail. The addition of the turbine increases the total drag coefficient to an estimated **Cd ≈ 0.6**, accounting for flow interference, while maintaining overall directional stability.
+
+---
 
 #### Pressure Design Calculations
-*[Engineering calculations for depth pressure resistance, safety factors, and structural analysis will be included]*
+Hydrostatic external pressure at 300 m depth is estimated using the standard seawater relation:
+
+\[
+p = \rho g h
+\]
+
+where:
+- \(\rho = 1025\ \mathrm{kg/m^3}\) (seawater density)  
+- \(g = 9.81\ \mathrm{m/s^2}\) (gravitational acceleration)  
+- \(h = 300\ \mathrm{m}\) (depth)
+
+\[
+p = 1025 \times 9.81 \times 300 = 3{,}016{,}575\ \mathrm{Pa} \approx 3.02\ \mathrm{MPa}
+\]
+
+Applying a **safety factor of 1.25**:
+
+\[
+p_\text{design} = 1.25 \times 3.02\ \mathrm{MPa} = 3.77\ \mathrm{MPa}
+\]
+
+Thus, the enclosure must resist a **design pressure of 3.77 MPa (≈37.7 bar)** without yielding or delamination.  
+The GFRP skin handles the primary compressive load, while the PLA core prevents buckling through internal support.  
+The resulting 5 mm composite wall (3 mm core + 2 mm GFRP) provides an ample margin against both collapse and wrinkling failure.
+
+---
 
 #### 3D Printing Development
-*[Additive manufacturing considerations, material selection, print orientation, and post-processing requirements will be specified]*
+- **Process Parameters**: Printed using **0.2 mm nozzle**, **0.12–0.16 mm layer height**, and **100% infill** for maximum density.  
+- **Tolerances**: Nominal ±0.2 mm, with post-processing (fine sanding and resin impregnation) to achieve sealing-grade surfaces for O-rings.  
+- **Impregnation Phase**: The printed hull is first coated in **low-viscosity vinyl ester resin** under vacuum to seal print lines before GFRP layup.  
+- **Layup Phase**: The 2 mm GFRP skin is applied using vacuum bagging, ensuring <2% void content and high fiber–resin adhesion.  
+- **Final Assembly**: Mating surfaces (hull–cover interface and sensor port) are machined or sanded to fit standard marine seal grooves per Parker specifications.
+
+---
+
 
 ### Mechanical Design - Attachment System
 
@@ -379,65 +421,6 @@ This integrated system enables long-term autonomous monitoring of shark behavior
 
 #### Turbine Configuration
 *[Turbine blade design, flow optimization, and energy conversion efficiency analysis will be presented]*
-
-
-
-
-
-
-
-### Structural Components
-
-*[List of mechanical components and materials will be added once information is received from mechanical team]*
-
-### Design Criteria
-
-#### Marine Environment Considerations
-- **Corrosion Resistance**: Materials and coatings suitable for saltwater exposure
-- **Pressure Tolerance**: Structural integrity at operational depths
-- **Biofouling Mitigation**: Surface treatments to prevent marine growth
-- **UV Degradation**: Protection against sunlight exposure during surface intervals
-
-#### Operational Requirements
-- **Attachment Security**: Reliable mounting without animal harm
-- **Hydrodynamic Efficiency**: Minimal impact on shark swimming performance
-- **Durability**: Long-term deployment capability in harsh conditions
-- **Serviceability**: Reasonable maintenance and component access
-
-#### Design Constraints
-- **Size Limitations**: Maximum dimensions for target shark species
-- **Weight Budget**: Buoyancy and drag considerations
-- **Manufacturing Feasibility**: Practical production within available resources
-- **Regulatory Compliance**: Animal welfare and environmental regulations
-
-### Mechanical Design - Enclosure Structure
-
-#### Structural Approach with Reinforcement
-*[Details on enclosure design strategy, reinforcement methods, and load distribution will be documented here]*
-
-#### Pressure Design Calculations
-*[Engineering calculations for depth pressure resistance, safety factors, and structural analysis will be included]*
-
-#### 3D Printing Development
-*[Additive manufacturing considerations, material selection, print orientation, and post-processing requirements will be specified]*
-
-### Mechanical Design - Attachment System
-
-#### Non-Invasive Coupling Approach
-*[Clamp mechanism design philosophy, padding materials, and animal safety features will be described]*
-
-#### Spring Calculations and Grip Pad Sizing
-*[Mechanical spring design, force calculations, contact pressure distribution, and pad dimensioning will be detailed]*
-
-### Mechanical Design - Pelton Turbine
-
-#### Turbine Configuration
-*[Turbine blade design, flow optimization, and energy conversion efficiency analysis will be presented]*
-
-
-
-
-
 
 
 
